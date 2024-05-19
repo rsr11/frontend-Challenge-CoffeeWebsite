@@ -6,6 +6,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+
 span{
     color:#FFBD7F;
 }
@@ -51,12 +52,20 @@ h3{
   }
 
 .menu{
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: visible;
+    transition: all 0.6s;
     scrollbar-width: 0;
     scroll-behavior: smooth;
     scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
+
 }
 
+#inner-menu{
+    transition: all 0.6s;
+}
 
+.menu:hover{
+    /* transform: translateX(-100px); */
+}
