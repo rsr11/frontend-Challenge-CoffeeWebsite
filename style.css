@@ -29,7 +29,7 @@ h3{
 }
 
 .menu article:hover{
-    scale: 1.1;
+    /* scale: 1.1; */
     background-color: #FFBD7F;
 }
 
@@ -40,3 +40,23 @@ h3{
 .menu article:hover div>p{
     color: #2F2105;
 }
+
+.menu article{
+    flex-shrink: 0;
+    width:240px;    /*  320px  */
+}
+
+.menu::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+
+.menu{
+    overflow-x: scroll;
+    overflow-y: visible;
+    scrollbar-width: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+
