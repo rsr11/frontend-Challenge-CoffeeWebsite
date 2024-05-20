@@ -87,6 +87,10 @@ h3,h2{
     border-radius:8px;
 }
 
+.mini-card::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+
 .mini-card:hover{
     background-color: #FFBD7F;
 }
