@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing</title>
+</head>
+
+<style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.container{
+  width:100vw;
+  height:80vh;
+  background-color:black;
+  padding-top:50px;
+  position:relative;
+}
+
+.Prev, .Next{
+  background-color:red;
+  display:inline;
+  padding:10px;
+  color:white;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  transform:translatey(-50%);
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.Prev{
+  left:0px;
+}
+
+.Prev:active{
+   background-color: black;
+   color: aliceblue;
+   border: 1px solid white;
+}
+
+.Next:active{
+   background-color: black;
+   color: aliceblue;
+   border: 1px solid white;
+}
+
+.Next{
+  right:0px;
+}
+
+.crousal-box{
+/*   margin:0 25px; */
+  width:80vw;
+  height:60vh;
+  background-color:grey;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:start;
+  overflow-x:hidden;
+  gap:32px; 
+  transition: all 0.5s;
+  position:relative;
+  padding: 0 15px;
+}
+
+.inner-crousal-box{
+  display:flex;
+  transition: all 0.6s;
+  /* justify-items: center; */
+  gap:50px;
+}
+
+.inner-crousal-box:hover{
+/*  transform: translateX(-231px); */
+}
+
+.card{
+  width:200px;
+  height:250px;
+  background-color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+</style>
+
+<body>
+    <section class="container">
+        <button class="Prev" id="Prev"> P </button>
+        <button class="Next" id="Next"> N </button>
+        <section class="crousal-box">
+          <section id="inner-crousal-box" class="inner-crousal-box">
+          <article class="card">A</article>
+          <article class="card">B</article>
+          <article class="card">C</article>
+          <article class="card">D</article>
+          <article class="card">E</article>
+          <article class="card">F</article>
+          <article class="card">G</article>
+          <article class="card">H</article>
+          </sectio0> 
+        </section>
+      </section>
+</body>
+
+<script>
+    
+    
+    let add =0;
+    
+    
+    let nextBtn = document.getElementById(`Next`);
+    let prevBtn = document.getElementById(`Prev`);
+    
+//     prevBtn.addEventListener("click",()=>{
+       
+    let items = document.getElementsByClassName(`card`);
+    
+    let totalItems = items.length;
+    console.log(totalItems);
+
+    totalItems = totalItems/4;
+    console.log(totalItems);
+
+    totalItems = -250*totalItems;
+    console.log(totalItems);
+// });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    
+    nextBtn.addEventListener("click",()=>{
+        if(add===0){
+            add = -250;
+            console.log(add);
+            let crousal = document.getElementById(`inner-crousal-box`);
+            crousal.style.transform=`translateX(${add}px)`;
+            return;
+
+        }else if(add === totalItems){
+            return;
+        }else{
+            
+            add=add-250;
+            console.log(add);
+            // alert(add);
+            let crousal = document.getElementById(`inner-crousal-box`);
+            crousal.style.transform=`translateX(${add}px)`;
+        }
+    })
+    
+    prevBtn.addEventListener("click",()=>{
+        if(add === 0){
+        return;
+    }
+    
+    add = add + 250;
+    console.log(add);
+    // alert(add);
+    let crousal = document.getElementById(`inner-crousal-box`);
+    crousal.style.transform=`translateX(${add}px)`;
+    
+    });
+});
+
+</script>
+
+</html>
